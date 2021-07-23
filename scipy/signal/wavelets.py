@@ -467,7 +467,7 @@ def cwt(data, wavelet, widths, dtype=None, **kwargs):
 
     output = np.empty((len(widths), len(data)), dtype=dtype)
     for ind, width in enumerate(widths):
-        N = np.min([10 * width, len(data)])
+        N = np.min([10 * width, len(data)])//2*2 - 1
         # the conditional block below and the window_size
         # kwarg pop above may be removed eventually; these
         # are shims for 32-bit arch + NumPy <= 1.14.5 to
